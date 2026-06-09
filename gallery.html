@@ -23,6 +23,21 @@
       <div class="model-card"><div class="thumb">🪑</div><h3>Chair Object</h3><p>OBJ Ready</p></div>
       <div class="model-card"><div class="thumb">🚗</div><h3>Vehicle Object</h3><p>AR Ready</p></div>
     </div>
+    <h2 style="margin-top:30px;">Recent Scans</h2>
+
+<div id="history"></div>
+
+<script>
+const scans = JSON.parse(localStorage.getItem("scans") || "[]");
+const history = document.getElementById("history");
+
+history.innerHTML = scans.map(scan => 
+<div class="model-card">
+  <h3>${scan.name}</h3>
+  <p>${scan.date}</p>
+</div>
+).join("");
+</script>
   </main>
 </body>
 </html>
