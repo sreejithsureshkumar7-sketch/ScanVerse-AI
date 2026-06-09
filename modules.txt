@@ -1,0 +1,11 @@
+Modules
+
+1. User Authentication
+2. Camera Scanner
+3. AI Object Detection
+4. 3D Model Viewer
+5. Scan Gallery
+6. Export Model
+7. Backend API
+8. Database Storage
+9. Admin Dashboard Future Scope

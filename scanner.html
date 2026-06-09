@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scanner - ScanVerse AI</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ScanVerse <span>AI</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="viewer.html">3D Viewer</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Camera Scanner</h1>
+    <p>Allow camera permission and place an object in front of camera.</p>
+
+    <div class="scanner-layout">
+      <video id="camera" autoplay playsinline></video>
+      <div class="scanner-panel">
+        <h3>AI Scan Result</h3>
+        <p id="result">No scan yet</p>
+        <button onclick="startCamera()">Start Camera</button>
+        <button onclick="scanObject()">Scan Object</button>
+        <button onclick="saveScan()">Save Scan</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/scanner.js"></script>
+</body>
+</html>

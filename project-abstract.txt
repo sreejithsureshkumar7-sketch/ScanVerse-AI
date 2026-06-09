@@ -1,0 +1,5 @@
+Project Abstract
+
+ScanVerse AI is a real-time mobile 3D object reconstruction and AR visualization platform. The system allows users to scan real-world objects using a mobile camera, detect object category using AI, preview a 3D model, store scan history, and export models for AR, games, videos, and design usage.
+
+This project demonstrates frontend development, backend API development, database structure, AI integration concept, 3D rendering, and future AR support.
