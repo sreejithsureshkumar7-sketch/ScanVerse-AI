@@ -10,10 +10,33 @@ async function startCamera(){
   }
 }
 
-function scanObject(){
-  const demoObjects = ["Chair", "Bottle", "Box", "Laptop", "Bag", "Book"];
-  const objectName = demoObjects[Math.floor(Math.random() * demoObjects.length)];
-  result.innerHTML = `Detected Object: <b>${objectName}</b><br>Status: 3D reconstruction demo ready`;
+let model;
+
+async function loadModel() {
+  model = await cocoSsd.load();
+  console.log("AI Model Loaded");
+}
+
+loadModel();
+
+async function scanObject() {
+  if (!model) {
+    alert("AI model loading... wait 5 seconds");
+    return;
+  }
+
+  const predictions = await model.detect(camera);
+
+  if (predictions.length > 0) {
+    result.innerHTML =
+      "Detected Object: <b>" +
+      predictions[0].class +
+      "</b><br>Confidence: " +
+      Math.round(predictions[0].score * 100) +
+      "%";
+  } else {
+    result.innerHTML = "No object detected";
+  }
 }
 
 function saveScan(){
